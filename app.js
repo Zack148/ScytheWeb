@@ -24,6 +24,22 @@ app.get('/store', function(req, res) {
   res.render('store', {title:'Store'});
 });
 
+
+// Store items
+
+products: [
+  {
+    id: '1',
+    title: 'Spotify Accounts',
+    description: 'This is example text change for production.'
+  },
+
+  {
+    id: '2',
+    title: 'NordVPN Accounts',
+    description: 'This is example text change for production.'
+  }
+]
 app.listen(3000, function() {
   console.log('Server started on port 3000');
 })
