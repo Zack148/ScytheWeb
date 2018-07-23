@@ -1,0 +1,21 @@
+<% include _includes/header %>
+  <div class="container">
+    <div class="d-flex">
+      <h3>Welcome, <%if (user.username) { %>
+        <%= user.username %>
+    <% } else { %>
+       <%= user.name %>
+    <% } %>
+
+    </h3>
+      <img class="ml-2" src="<% if (user.thumbnail) { %>
+      <%= user.thumbnail %>
+    <% } else { %>
+      <%= user.profilePicture %>
+  <% } %> " alt="User thumbnail">
+    </div>
+
+    <p class="lead text-center"></p>
+    <a class="btn btn-danger" href="/logout">Logout</a>
+  </div>
+  <% include _includes/footer %>

@@ -1,0 +1,33 @@
+.image-width-google {
+  width: 30px;
+}
+
+.image-width-logo {
+  width: 60px;
+}
+
+.image-width-twitter {
+  width: 30px;
+}
+
+.btn-login {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+  border-radius: 4px;
+  font-weight: 400;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.btn-login:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+body, header, html{
+background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
