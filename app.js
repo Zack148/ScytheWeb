@@ -5,6 +5,7 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var cookieSession = require('cookie-session');
 var passportSetup = require('./config/passport-setup');
+var cards = require('./config/cards-setup');
 var keys = require('./config/keys');
 var profileRoutes = require('./routes/profile-routes');
 var authRoutes = require('./routes/auth-routes');
@@ -62,10 +63,10 @@ app.get('/logout', function(req, res) {
 app.get('/store', function(req, res) {
   res.render('store', {
     user: req.user,
-    title: 'Store'});
+    title: 'Store',
+    cards: cards
+  });
 });
-
-
 
 //Start server
 app.listen(3000, function() {
