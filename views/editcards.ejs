@@ -1,0 +1,46 @@
+<% include _includes/header %>
+  <div class="container">
+    <form method="post" action="/card/update">
+      <input type="hidden"  name="id" value="<%= card.id %>">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="input" value="<%= card.title %>" name="title" class="form-control" id="title" placeholder="Card Title">
+      </div>
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <input type="input" value="<%= card.desc %>" name="desc" class="form-control" id="desc" placeholder="Card Description">
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="input" value="<%= card.image %>" name="image" class="form-control" id="image" placeholder="Card Image">
+      </div>
+      <div class="form-group">
+        <label for="type">In or Out of Stock?</label>
+        <select class="form-control" name="stocked" id="stocked">
+          <option selected>In Stock</option>
+          <option>Out of Stock</option>
+        </select>
+      <div class="form-group">
+        <label for="type">Type of Account</label>
+        <select class="form-control" name="type" id="type">
+          <option selected>Shared</option>
+          <option>Private</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mostPopular">Most Popular</label>
+        <select class="form-control" name="mostPopular" id="mostPopular">
+          <% if (card.mostPopular) { %>
+            <option value="true" selected>Yes</option>
+            <option value="no">No</option>
+          <%  } else { %>
+            <option value="true">Yes</option>
+            <option value="no" selected>No</option>
+          <% } %>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <% include _includes/footer %>

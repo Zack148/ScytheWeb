@@ -1,7 +1,19 @@
 <% include _includes/header.ejs %>
   <div class="container">
-    <% cards.forEach( card => { %>
-      <%- include('_includes/cards.ejs', card) %>
-  <%  }) %>
+    <% if (canEdit) { %>
+        <a class="btn btn-primary" href="/card/new">Add a Card</a>
+  <%  } %>
+    <h2 class="text-center"><u>Most popular</u></h2>
+    <div class="row">
+      <% cards.filter(card => card.mostPopular).forEach( card => { %>
+        <%- include('_includes/cards.ejs', card) %>
+          <%  }) %>
+    </div>
+    <h2 class="text-center"><u>More Items</u></h2>
+    <div  class="row">
+      <% cards.filter(card => !card.mostPopular).forEach( card => { %>
+        <%- include('_includes/cards.ejs', card) %>
+          <%  }) %>
+    </div>
   </div>
   <% include _includes/footer.ejs %>

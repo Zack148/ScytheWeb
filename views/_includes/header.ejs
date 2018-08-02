@@ -18,9 +18,10 @@
       <h5 class="my-0 mr-md-auto"><img class="image-width-logo" src="../images/logo.png"></h5>
       <nav class="my-2 my-md-0 mr-md-3">
               <a class="p-2 text-dark" href="/">Home</a>
-              <a class="p-2 text-dark" href="store">Store</a>
-              <a class="p-2 text-dark" href="profile">Profile</a>
-              <% if (user) { %>
+              <a class="p-2 text-dark" href="/store">Store</a>
+              <a class="p-2 text-dark" href="/profile">Profile</a>
+              <a class="p-2 text-dark" href="/faq">FAQ</a>
+              <% if (isAuthenticated) { %>
                 <a class="p-2 text-dark" href="/logout"> Logout </a>
                 <% } else { %>
                   <a class="p-2 text-dark" href="/login"> Login </a>
