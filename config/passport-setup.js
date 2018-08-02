@@ -1,7 +1,6 @@
 var passport = require('passport');
 var GoogleStategy = require('passport-google-oauth20');
 var TwitterStrategy = require('passport-twitter');
-var keys = require('./keys');
 var User = require('../models/user-models');
 
 passport.serializeUser((user, done) => {
@@ -19,8 +18,8 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStategy({
   //options for strat
   callbackURL: '/auth/google/redirect',
-  clientID: keys.google.clientID,
-  clientSecret: keys.google.clientSecret
+  clientID: process.env.GOOGLE_CLIENTID,
+  clientSecret: process.env.GOOGLE_CLIENTSECRET
 }, (accessToken, refreshToken, profile, done) => {
   //Check if user already exists in the db
   User.findOne({googleId: profile.id}).then((currentUser) => {
@@ -40,8 +39,8 @@ passport.use(new GoogleStategy({
 
 //Twitter Login
 passport.use(new TwitterStrategy({
-    consumerKey: keys.twitter.consumerKey,
-    consumerSecret: keys.twitter.consumerSecret,
+    consumerKey: process.env.TWITTER_CONSUMERKEY,
+    consumerSecret: process.env.TWITTER_CONSUMERSECRET,
     callbackURL: "/auth/twitter/redirect"
   },
   (token, tokenSecret, profile, done) => {

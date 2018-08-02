@@ -1,4 +1,5 @@
 var express = require('express');
+var dotenv = require('dotenv').config()
 var path = require('path');
 var mongo = require('mongodb');
 var passport = require('passport');
@@ -6,9 +7,8 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cookieSession = require('cookie-session');
 var passportSetup = require('./config/passport-setup');
-var keys = require('./config/keys');
 
-mongoose.connect(keys.mongodb.db,{ useNewUrlParser: true }, () => {
+mongoose.connect(process.env.MONGODB_DB,{ useNewUrlParser: true }, () => {
   console.log('Connected to mongodb');
 })
 
@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(cookieSession({
   maxAge: 86400000, //milliseconds
-  keys: [keys.session.cookieKey]
+  keys: [process.env.SESSION_COOKIEKEY]
 }));
 
 app.use(require('body-parser').urlencoded({ extended: true }));
