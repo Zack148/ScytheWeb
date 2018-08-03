@@ -17,7 +17,7 @@ passport.deserializeUser((id, done) => {
 //Google Sign in
 passport.use(new GoogleStategy({
   //options for strat
-  callbackURL: '/auth/google/redirect',
+  callbackURL: process.env.GOOGLE_CALLBACKURL,
   clientID: process.env.GOOGLE_CLIENTID,
   clientSecret: process.env.GOOGLE_CLIENTSECRET
 }, (accessToken, refreshToken, profile, done) => {
@@ -41,7 +41,7 @@ passport.use(new GoogleStategy({
 passport.use(new TwitterStrategy({
     consumerKey: process.env.TWITTER_CONSUMERKEY,
     consumerSecret: process.env.TWITTER_CONSUMERSECRET,
-    callbackURL: "/auth/twitter/redirect"
+    callbackURL: process.env.TWITTER_CALLBACKURL
   },
   (token, tokenSecret, profile, done) => {
     // console.log(profile);
