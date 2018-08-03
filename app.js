@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var cookieSession = require('cookie-session');
 var passportSetup = require('./config/passport-setup');
 
-mongoose.connect(process.env.MONGODB_DB,{ useNewUrlParser: true }, () => {
+mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true }, () => {
   console.log('Connected to mongodb');
 })
 
