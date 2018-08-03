@@ -79,6 +79,6 @@ app.get('/logout', function(req, res) {
 });
 
 //Start server
-app.listen(3000, function() {
-  console.log('Server started on port 3000');
+app.listen(process.env.PORT || '3000', function() {
+  console.log('Server started on port' + process.env.PORT || '3000');
 })
