@@ -4,9 +4,12 @@ $('.row').masonry({
   itemSelector: '.item',
 })
 
+//Tool Tips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 //Drift
-//Start of Async Drift Code
 "use strict";
 
 !function() {
@@ -31,4 +34,3 @@ $('.row').masonry({
 }();
 drift.SNIPPET_VERSION = '0.3.1';
 drift.load('tg8s77a2zr4c');
-//End of Async Drift Code

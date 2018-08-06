@@ -1,5 +1,5 @@
-<div class="col-12 col-md-3 item">
-    <div class="card">
+<div class="col-md-3 item">
+    <div class="card text-center">
       <img class="card-img-top" src='<%= image %>' alt="Card image cap">
       <div class="card-body">
         <div class="<%= type === 'Private'  ? 'text-success' : 'text-danger' %>" >
@@ -11,7 +11,8 @@
           <p class="card-text"><%= stocked %></p>
         </div>
 
-        <a href="#" class="btn btn-primary">Buy Now</a>
+        <!-- <a href="#" class="btn btn-card-btc mb-2"><i class="fab fa-bitcoin btn-card-text-margin"></i></i>BTC</a> -->
+        <a href="https://www.paypal.me/ScytheApp" class="btn btn-primary btn-card-paypal"><i class="fab fa-paypal btn-card-text-margin"></i>PayPal</a>
         <% if (canEdit) { %>
             <a href="/card/<%= id %>" class="btn btn-danger">Edit</a>
       <%  } %>

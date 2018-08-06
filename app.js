@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(cookieSession({
-  maxAge: 86400000, //milliseconds
+  maxAge: null, //milliseconds
   keys: [process.env.SESSION_COOKIEKEY]
 }));
 
