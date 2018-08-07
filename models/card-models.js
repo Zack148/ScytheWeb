@@ -7,6 +7,7 @@ module.exports = mongoose.model('card',new Schema({
   desc: String,
   stocked: String,
   type: String,
+  paymentLink: String,
   mostPopular: {type: 'boolean', default: false}
   })
 );

@@ -66,24 +66,25 @@ body, html {
   text-decoration: none;
 }
 
-.btn-card-paypal {
+.btn-card-eth {
   width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: 	#003087;
+  background-color: 	#3C3C3D;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
-  border-color: #006dcc;
   border-radius: 4px;
+  border-color: #ffffff;
   font-weight: 400;
   color: #ffffff;
   text-decoration: none;
   margin-bottom: 8px;
 }
 
-.btn-card-paypal:hover {
-  color: #009cde;
-  background-color: white;
+.btn-card-eth:hover {
+  color: #3C3C3D;
+  border-color: #006dcc;
+  background-color: #ECF0F1;
   text-decoration: none;
 }
 

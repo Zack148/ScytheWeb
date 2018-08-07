@@ -23,6 +23,7 @@ router.post('/update', async function(req, res) {
         image: req.body.image,
         stocked: req.body.stocked,
         type: req.body.type,
+        paymentLink: req.body.paymentLink,
         mostPopular: req.body.mostPopular
       }
   }).exec()
